@@ -1,0 +1,44 @@
+<div class="container">
+  <nav class="navbar navbar-light navbar-expand-lg bg-light">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class='navbar-nav mr-auto'>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Search</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/savedrecipes">Saved</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">List</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="row">
+    <div class="col-md-3">
+      <form>
+        <div class='row-fluid'>
+          <div class="span12">
+            <label ngFor='foodSel'>Select a Meat</label>
+            <select class="form-control">
+              <option>chicken</option>
+              <option>beef</option>
+              <option>fish</option>
+              <option>pork</option>
+            </select>
+            <button type="submit">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
+</div>

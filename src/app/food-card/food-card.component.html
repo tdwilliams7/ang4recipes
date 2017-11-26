@@ -1,0 +1,27 @@
+<!-- <div class='row'><h4>Results</h4></div>
+<div class="card col-md-6" *ngFor='let recipe of recipes'>
+    <img class='img-fluid' [src]="recipe.recipe.image">
+    <div class="card-block">
+    <a href='#' target='_blank'><h5>{{ recipe.recipe.label }}</h5></a>
+    <button>Save for later</button>
+    </div>
+</div> -->
+
+<div class="row"><h4>Results</h4></div>
+<div class="card col-md-12" *ngFor='let recipe of recipes'>
+    <a href="{{ recipe.recipe.url }}">
+        <div class="row-fluid">
+            <div class="span4">
+                <img class="card-img-top" [src]='recipe.recipe.image'>
+            </div>
+            <div class="span8">
+                <div class="card-body">
+                    <h5>{{ recipe.recipe.label}}</h5>
+                    <p >{{ recipe.recipe.source}}</p>
+                    <p>{{ recipe.recipe.dietLabels }}</p>
+                    <p>{{ recipe.recipe.calories / recipe.recipe.yield }}</p>
+                </div>
+            </div>
+        </div>
+    </a>
+</div>
