@@ -10,14 +10,13 @@ import { RecipesService } from '../recipes.service';
   providers: [RecipesService, HttpClient]
 })
 export class FoodCardComponent implements OnInit {
-  private recipes: Array;
+  private recipes: Array<any>;
 
   constructor(private _recipeService: RecipesService) { }
 
   ngOnInit() {
     this._recipeService.getRecipes().subscribe(data =>{
       this.recipes = data.hits;
-      console.log(this.recipes);
     });
   }
 
