@@ -6,7 +6,7 @@ import { SavedRecipesComponent } from './saved-recipes/saved-recipes.component';
 const routes: Routes =[
     { path: '', redirectTo: '/foods', pathMatch: 'full' },
     { path: 'foods', component: FoodCardComponent },
-    { path: 'savedrecipes', component: SavedRecipesComponent }
+    { path: 'myrecipes', component: SavedRecipesComponent }
 ]
 
 

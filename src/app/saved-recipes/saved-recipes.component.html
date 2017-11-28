@@ -1,9 +1,9 @@
 <div class="row"><h4>Results</h4></div>
-<div class="card col-md-12" *ngFor='let recipe of savedRecipes'>
+<div class="card col-md-6" *ngFor='let recipe of savedRecipes'>
     <a href="{{ recipe.url }}">
         <div class="row-fluid">
             <div class="span4">
-                <img class="card-img-top" [src]='recipe.image'>
+                <img class="card-img-top img-responsive" [src]='recipe.image'>
             </div>
             <div class="span8">
                 <div class="card-body">

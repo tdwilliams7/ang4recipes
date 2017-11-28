@@ -22,9 +22,12 @@
     "@angular/platform-browser-dynamic": "^5.0.0",
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.5",
+    "angularfire2": "^5.0.0-rc.4",
+    "axios": "^0.17.1",
     "body-parser": "^1.18.2",
     "core-js": "^2.4.1",
     "express": "^4.16.2",
+    "firebase": "^4.6.2",
     "method-override": "^2.3.10",
     "mongoose": "^4.13.5",
     "morgan": "^1.9.0",
@@ -57,5 +60,13 @@
   },
   "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.3.",
   "main": "karma.conf.js",
-  "author": ""
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdwilliams7/ang4recipes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tdwilliams7/ang4recipes/issues"
+  },
+  "homepage": "https://github.com/tdwilliams7/ang4recipes#readme"
 }

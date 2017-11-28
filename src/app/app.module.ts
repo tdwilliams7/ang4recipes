@@ -4,7 +4,6 @@ import { HttpClientModule} from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 
 
-
 import { AppComponent } from './app.component';
 import { FoodCardComponent } from './food-card/food-card.component';
 import { AppRoutingModule } from './/app-routing.module';
@@ -23,6 +22,7 @@ import { SavedRecipesComponent } from './saved-recipes/saved-recipes.component';
     AppRoutingModule,
     HttpClientModule,
     HttpModule,
+
   ],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
