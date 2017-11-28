@@ -15,9 +15,15 @@ export class SavedRecipesComponent implements OnInit {
 
   ngOnInit() {
       this._savedRecipesService.getSavedRecipes().subscribe(data =>{
+        if (data < 1) {
+          this.savedRecipes = [{
+            name: "Add some Recipes"
+          }]
+        } else {
           this.savedRecipes = data;
-          console.log(this.savedRecipes);
-      })
+        }
+          console.log(this.savedRecipes)
+          })
   }
 
 }
