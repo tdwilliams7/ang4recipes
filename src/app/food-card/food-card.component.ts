@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { RecipesService } from '../recipes.service';
 import { SavedRecipesService } from '../saved-recipes.service'
 import { Http, Response } from '@angular/http';
+import {Observable} from 'rxjs';
+import 'rxjs/add/operator/map';
 
 
 
@@ -15,9 +17,10 @@ import { Http, Response } from '@angular/http';
 export class FoodCardComponent implements OnInit {
   private recipes: Array<any>;
 
+
   constructor(private _recipeService: RecipesService) { }
   addSavedRecipes($event){
-    this._recipeService.addRecipe($event).map((res: Response) => res.json());
+    this._recipeService.addRecipe($event);
   }
 
   ngOnInit() {
