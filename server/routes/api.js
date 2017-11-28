@@ -25,7 +25,7 @@ router.get('/myrecipes', (req, res) => {
     return res.json(recipes);
   });
 });
-
+// POST api to express
 router.post('/myrecipes', (req, res) => {
   console.log(req);
   Recipe.create({
@@ -45,18 +45,18 @@ router.post('/myrecipes', (req, res) => {
   });
 });
 
-// router.delete('/myrecipes/:id', (req, res) => {
-//     Recipe.remove({
-//         _id: req.params.id
-//     }, function(err, recipe){
-//         if (err)
-//             return console.log(err);
-//         Recipe.find( (err, recipes) =>{
-//             if (err)
-//                 return console.log(err);
-//             res.json(recipes);
-//         });
-//     });
-// });
+router.delete('/myrecipes/:id', (req, res) => {
+  Recipe.remove({
+    _id: req.params.id
+  }, function(err, recipe) {
+    if (err)
+      return console.log(err);
+    Recipe.find((err, recipes) => {
+      if (err)
+        return console.log(err);
+      res.json(recipes);
+    });
+  });
+});
 
 module.exports = router;

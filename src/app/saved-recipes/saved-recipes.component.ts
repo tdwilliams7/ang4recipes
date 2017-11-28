@@ -25,5 +25,20 @@ export class SavedRecipesComponent implements OnInit {
           console.log(this.savedRecipes)
           })
   }
+  removeSavedRecipe($event){
+    console.log($event);
+    this._savedRecipesService.removeRecipe($event)
+      .subscribe()
 
+      this._savedRecipesService.getSavedRecipes().subscribe(data =>{
+        if (data < 1) {
+          this.savedRecipes = [{
+            name: "Add some Recipes"
+          }]
+        } else {
+          this.savedRecipes = data;
+        }
+          console.log(this.savedRecipes)
+          })
+  }
 }

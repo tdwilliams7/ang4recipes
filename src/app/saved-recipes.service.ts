@@ -11,4 +11,7 @@ export class SavedRecipesService {
       return this.http.get('/api/myrecipes')
           .map(res => res.json());
   }
+  removeRecipe(id){
+    return this.http.delete('/api/myrecipes/' + id).map( res => res.json())
+  }
 }
