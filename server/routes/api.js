@@ -13,6 +13,7 @@ const Recipe = mongoose.model('Recipe', {
   image: String,
   url: String,
   source: String,
+  ingredients: Array,
 });
 
 
@@ -27,13 +28,13 @@ router.get('/myrecipes', (req, res) => {
 });
 // POST api to express
 router.post('/myrecipes', (req, res) => {
-  console.log(req);
   Recipe.create({
     uri: req.body.uri,
     name: req.body.name,
     image: req.body.image,
     url: req.body.url,
     source: req.body.source,
+    ingredients: req.body.ingredients,
   }, (err, recipe) => {
     if (err)
       res.send(err);

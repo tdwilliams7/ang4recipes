@@ -22,11 +22,11 @@ export class RecipesService {
       image: $event.image,
       uri: $event.uri,
       url: $event.url,
-      source: $event.source
+      source: $event.source,
+      ingredients: $event.ingredients,
     };
-    console.log(body);
     const req = this.http.post('/api/myrecipes', body)
 
-    req.subscribe(res => console.log(res));
+    req.subscribe();
   }
 }

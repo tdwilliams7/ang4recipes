@@ -21,6 +21,7 @@ export class FoodCardComponent implements OnInit {
   constructor(private _recipeService: RecipesService) { }
   addSavedRecipes($event){
     this._recipeService.addRecipe($event);
+    alert('Added to your saved recipes!')
   }
 
   ngOnInit() {

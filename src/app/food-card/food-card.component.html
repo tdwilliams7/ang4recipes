@@ -7,23 +7,24 @@
     </div>
 </div> -->
 
-<div class="row"><h4>Results</h4></div>
-<div class="card col-md-6" *ngFor='let recipe of recipes'>
+<div class="row">
+  <h4>Results</h4></div>
+<div class="row">
+  <div class="card col-md-6" *ngFor='let recipe of recipes'>
 
-        <div class="row-fluid">
-            <div class="span4">
-                <a href="{{ recipe.recipe.url }}">
+    <div class="row-fluid">
+      <div class="span12">
+        <a href="{{ recipe.recipe.url }}">
                     <img class="card-img-top" [src]='recipe.recipe.image'>
                 </a>
-            </div>
-            <div class="span8">
-                <div class="card-body">
-                    <h5>{{ recipe.recipe.label}}</h5>
-                    <p >{{ recipe.recipe.source}}</p>
-                    <p>{{ recipe.recipe.dietLabels }}</p>
-                    <p>{{ recipe.recipe.calories / recipe.recipe.yield }}</p>
-                    <button (click)=addSavedRecipes(recipe.recipe)>Add</button>
-                </div>
-            </div>
+        <div class="card-body">
+          <h5>{{ recipe.recipe.label}}</h5>
+          <p>{{ recipe.recipe.source}}</p>
+          <p>{{ recipe.recipe.dietLabels }}</p>
+          <p>{{ recipe.recipe.calories / recipe.recipe.yield }}</p>
+          <button (click)=addSavedRecipes(recipe.recipe)>Add</button>
         </div>
+      </div>
+    </div>
+  </div>
 </div>

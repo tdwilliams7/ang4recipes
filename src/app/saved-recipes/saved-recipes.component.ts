@@ -9,36 +9,29 @@ import { SavedRecipesService } from '../saved-recipes.service'
   providers: [SavedRecipesService, HttpClient]
 })
 export class SavedRecipesComponent implements OnInit {
-    private savedRecipes: Array<any>;
+  private savedRecipes: Array<any>;
 
   constructor(private _savedRecipesService: SavedRecipesService) { }
 
-  ngOnInit() {
-      this._savedRecipesService.getSavedRecipes().subscribe(data =>{
-        if (data < 1) {
-          this.savedRecipes = [{
-            name: "Add some Recipes"
-          }]
-        } else {
-          this.savedRecipes = data;
-        }
-          console.log(this.savedRecipes)
-          })
+  getSavedRecipes() {
+    this._savedRecipesService.getSavedRecipes().subscribe(data => {
+      if (data < 1) {
+        this.savedRecipes = [{
+          name: "Add some Recipes"
+        }]
+      } else {
+        this.savedRecipes = data;
+      }
+    })
   }
-  removeSavedRecipe($event){
-    console.log($event);
+
+  ngOnInit() {
+    this.getSavedRecipes();
+  }
+  removeSavedRecipe($event) {
     this._savedRecipesService.removeRecipe($event)
       .subscribe()
 
-      this._savedRecipesService.getSavedRecipes().subscribe(data =>{
-        if (data < 1) {
-          this.savedRecipes = [{
-            name: "Add some Recipes"
-          }]
-        } else {
-          this.savedRecipes = data;
-        }
-          console.log(this.savedRecipes)
-          })
+    this.getSavedRecipes();
   }
 }
