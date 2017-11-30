@@ -21,7 +21,7 @@
           <h5>{{ recipe.recipe.label}}</h5>
           <p>{{ recipe.recipe.source}}</p>
           <p>{{ recipe.recipe.dietLabels }}</p>
-          <p>{{ recipe.recipe.calories / recipe.recipe.yield }}</p>
+          <p>{{ recipe.recipe.calories / recipe.recipe.yield | round}} calories per serving</p>
           <button (click)=addSavedRecipes(recipe.recipe)>Add</button>
         </div>
       </div>

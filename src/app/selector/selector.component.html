@@ -1,0 +1,14 @@
+<form>
+  <div class='row-fluid'>
+    <div class="span12">
+      <label>Select a Meat</label>
+      <select class="form-control" #selected name='selected'>
+        <option>chicken</option>
+        <option>beef</option>
+        <option>fish</option>
+        <option>pork</option>
+      </select>
+      <button (click)=searchByFood(selected.value)>Submit</button>
+    </div>
+  </div>
+</form>

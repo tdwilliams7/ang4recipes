@@ -23,25 +23,9 @@
 
   <div class="row">
     <div class="col-md-3">
-      <form>
-        <div class='row-fluid'>
-          <div class="span12">
-            <label ngFor='foodSel'>Select a Meat</label>
-            <select class="form-control">
-              <option>chicken</option>
-              <option>beef</option>
-              <option>fish</option>
-              <option>pork</option>
-            </select>
-            <button type="submit">Submit</button>
-          </div>
-        </div>
-      </form>
+      <app-selector></app-selector>
     </div>
     <div class="col-md-9">
       <router-outlet></router-outlet>
     </div>
-    <ul>
-
-</ul>
 </div>

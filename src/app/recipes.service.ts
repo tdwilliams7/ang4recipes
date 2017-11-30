@@ -8,13 +8,12 @@ export class RecipesService {
     private url = `receiver/`;
 
   constructor(private http: HttpClient) { }
-  getRecipes(): Observable<any>{
-      return this.http.get("https://api.edamam.com/search?q=chicken&app_id=933b24e9&app_key=5ec51a21d4c001a6109da140caf5ecef")
-      .map((res: Response) => res);
+  getRecipes(value){
+      return this.http.get("https://api.edamam.com/search?q=" + value +"&app_id=933b24e9&app_key=5ec51a21d4c001a6109da140caf5ecef")
+      .map(res => res);
   }
-   headers = new Headers({
-    'Content-Type': 'application/json'
-  });
+
+  // coming from food-card.component
   addRecipe($event){
     console.log($event)
     let body = {
