@@ -16,7 +16,8 @@ import 'rxjs/add/operator/map';
   providers: [RecipesService, HttpClient, FoodSearchService]
 })
 export class FoodCardComponent implements OnInit {
-  private recipes: Array<any>;
+  private recipes;
+  private stuff;
 
 
   constructor(private _recipeService: RecipesService, private _foodSearchService: FoodSearchService) { }
@@ -28,13 +29,15 @@ export class FoodCardComponent implements OnInit {
   //selector.component should pass in some sort of meat.
   searchByFood(food){
     this._recipeService.getRecipes(food).subscribe(data => {
-      this.recipes = data.hits;
+      this.stuff = data;
+      this.recipes = this.stuff.hits;
     })
   }
 
   ngOnInit() {
-    this._recipeService.getRecipes('beef').subscribe(data =>{
-      this.recipes = data.hits;
+    this._recipeService.getRecipes('fish').subscribe(data =>{
+      this.stuff = data;
+      this.recipes = this.stuff.hits;
     });
   }
 
