@@ -1,5 +1,7 @@
 # AngRecipes
 
+[Deployed on Heroku](https://stark-harbor-21921.herokuapp.com/)
+
 Fun project built with Angular 4 and Angular CLI.
 Pulls food Data from edamam api.
 
